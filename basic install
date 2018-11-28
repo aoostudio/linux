@@ -1,0 +1,10 @@
+# This script is written aoo 
+# update os
+yum -y update
+
+# install 
+yum install screen -y  
+
+yum install perl -y
+
+yum install net-tools -y
