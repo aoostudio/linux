@@ -1,0 +1,56 @@
+การกำหนดค่าบนไฟล์ fstab
+
+ต่อดิสท์ลูกใหม่กับเครื่อง 
+1 # fdisk /dev/sdb ( dev/sdb.... .....sda&sdb ) 
+2 # ใส่ Options  
+3 # mkfs.ext4 /dev/sd......ชื่อพาร์ทที่จะฟอร์แมท......
+4 # mount /dev/sdb1  /BACKUP (ทำการเมาท์ดิสท์หลังฟอร์แมทเสร็จ และก่อนที่จะคอนฟิก)
+4 # vi /etc/fstab       / เพื่อคอนฟิก
+
+ตัวอย่างการคอนฟิก
+/dev/sdb1            /BACKUP           ext4        defaults          0         0
+
+
+สำหรับไฟล์ fstab นั้นจะเป็นไฟล์ที่มีการเก็บข้อมูลของ partition ,disk จากอุปกรณ์ต่างๆ ที่ต้องการ mount เพื่อใช้งาน สำหรับไฟล์นี้จะอยู่ที่ /etc/fstab
+
+
+
+ข้อมูลในไฟล์ fstab จะประกอบ ด้วย 6 คอลัมน์ คือ
+
+คอลลั่มที่ 1,2 คือ คอลัมน์สำหรับอุปกรณ์ และ mount point
+
+คอลัมน์ที่ 3 คือ filesystem type ที่ต้องการ mount เช่น ext3, ext4, swap, ntfs เป็นต้น
+
+คอลลั่มที่ 4 คือ การกำหนดค่า option สำหรับการ mount
+
+คอลลั่มที่ 5,6 คือ การ dump ข้อมูล และ การกำหนดการ check system
+
+(ข้อมูลเพิ่มเติม: fstab)
+
+
+
+ตัวอย่างไฟล์ fstab
+
+
+/dev/sda1	/boot    	ext4	defaults,nosuid,noexec,nodev  	1 2
+
+/dev/sda2     	/       	ext4	defaults        		1 1
+
+/dev/sda3      	/home		ext4	defaults,nosuid,nodev  		1 2
+
+/dev/sda4      	/var		ext4	defaults,nosuid        		1 2
+
+/dev/sda2 	swap 		swap	defaults			0 0
+
+/dev/sda5  	/tmp         	ext4	defaults,nosuid,nodev,noexec 	0 0
+
+
+จะเห็นได้ว่า แต่ละ partition มีการกำหนด option (คอลลั่มที่ 4) แตกต่างกันไปตามการใช้งาน เช่น partition /tmp ซึ่งถือเป็นที่เก็บข้อมูลชั่วคราวต่างๆ เช่น session หรือไฟล์ที่ไม่มีการใช้งานในระยะยาว ไม่จำเป็นต้อง run ไฟล์ binary ได้ ซึ่งจากตัวอย่างจะมีการป้องกันเพิ่มเติมดังนี้
+
+
+
+Option nosuid เป็นการกำหนดเพื่อ ปิดกั้นการทำงานของ suid (set user ID upon execution) และ sgid bits (set group ID upon execution) ซึ่งโดยปกติการกำหนดค่า setuid และ setgid กำหนดด้วยคำสั่งchmod
+
+Option nodev กำหนดเพื่อไม่ให้มีการสร้าง block devices ใดๆ บน partition นี้
+
+Option noexec เป็นการกำหนดให้ไม่สามารถ run ไฟล์ binary ที่อยู่ใน partition นั้นๆ ได้ ซึ่งเหมาะกับ partition ที่ไม่ต้องการให้มีการ run binary เช่น tmp เป็นต้น
