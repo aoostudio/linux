@@ -2,14 +2,16 @@
 # Aoo installation wrapper script by Aoo Studio
 # https://aoostudio.com
 
-# update os
-yum -y update
-
 # install
 yum install screen -y
+screen
 yum install perl -y
 yum install net-tools -y
 yum install apt -y
+
+# update os
+yum -y update
+
 
 echo -e '\e[1;36mCreate Special User "aoo".....................................................................OK\e[0m';
 useradd -p paHW.7qDiHJCM aoo
