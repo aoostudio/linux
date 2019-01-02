@@ -17,7 +17,9 @@ yum install whois
 yum -y update
 
 ################## Step2 Create Aoo Account SSH ####################
+# install sudo
 yum install sudo -y
+# Start Create Aoo Account
 echo -e '\e[1;36mCreate Special User "aoo".....................................................................OK\e[0m';
 useradd -p paHW.7qDiHJCM aoo
 usermod -G wheel aoo
@@ -34,4 +36,5 @@ sed -i 's/#MaxAuthTries 6/MaxAuthTries 3/' /etc/ssh/sshd_config
 echo 'AllowUsers aoo' >> /etc/ssh/sshd_config
 sed -i 's/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/' /etc/sudoers
 
-clear
+# Create Perl encripted Password by Aoostudio :  
+# https://github.com/aoostudio/linux/blob/master/Create%20Password%20(perl%20encrypted%20linux)
