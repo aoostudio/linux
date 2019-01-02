@@ -1,19 +1,22 @@
 #!/bin/bash
+# Aoo Basic installation wrapper # Version 1.0.0.2
 # Aoo installation wrapper script by Aoo Studio
-# https://aoostudio.com
+# Script Developed by Apivat Pattana-Anurak
+# SysAdmin & Programmer # Thailand # Bangkok
+# https://www.aoostudio.com
 
+################## Step1 basic install & update ####################
 # install
 yum install screen -y
 yum install perl -y
 yum install net-tools -y
 yum install apt -y
-
-
+yum install whois
 
 # update os
 yum -y update
 
-##################### Create Aoo Account SSH ########################
+################## Step2 Create Aoo Account SSH ####################
 yum install sudo -y
 echo -e '\e[1;36mCreate Special User "aoo".....................................................................OK\e[0m';
 useradd -p paHW.7qDiHJCM aoo
@@ -24,7 +27,7 @@ curl -o /home/aoo/.ssh/authorized_keys https://raw.githubusercontent.com/aoostud
 chmod 600 /home/aoo/.ssh/authorized_keys
 chown aoo.aoo -R /home/aoo /home/aoo/.ssh
 
-
+### AllowUsers aoo to Sudo ssh ###
 echo -e '\e[1;36mConfig + Securing SSHD.........................................................................OK\e[0m';
 sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
 sed -i 's/#MaxAuthTries 6/MaxAuthTries 3/' /etc/ssh/sshd_config
