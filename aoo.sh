@@ -38,3 +38,9 @@ sed -i 's/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/' 
 
 # Create Perl encripted Password by Aoostudio :  
 # https://github.com/aoostudio/linux/blob/master/Create%20Password%20(perl%20encrypted%20linux)
+
+echo "************************************************"
+echo "*                                              *"
+echo "*           PLEASE REBOOT SERVER NOW           *"
+echo "*                                              *"
+echo "************************************************"
