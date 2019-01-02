@@ -11,7 +11,7 @@ yum install screen -y
 yum install perl -y
 yum install net-tools -y
 yum install apt -y
-yum install whois
+yum install whois -y
 
 # update os
 yum -y update
