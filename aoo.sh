@@ -10,7 +10,7 @@
 yum install screen -y
 yum install perl -y
 yum install net-tools -y
-yum install apt -y
+yum install wget -y
 yum install whois -y
 
 # update os
