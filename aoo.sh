@@ -9,6 +9,7 @@
 # install
 yum install screen -y
 yum install perl -y
+yum -y install epel-release
 yum install net-tools -y
 yum install wget -y
 yum install whois -y
@@ -38,6 +39,11 @@ sed -i 's/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/' 
 
 # Create Perl encripted Password by Aoostudio :  
 # https://github.com/aoostudio/linux/blob/master/Create%20Password%20(perl%20encrypted%20linux)
+
+### os procress monitor ###
+yum install htop -y
+### mysql procress monitor ##
+yum install mytop -y
 
 echo "************************************************"
 echo "*                                              *"
