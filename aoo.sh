@@ -1,5 +1,5 @@
 #!/bin/bash
-# Aoo Basic installation wrapper # Version 1.0.0.3
+# Aoo Basic installation wrapper # Version 1.0.0.4
 # Aoo installation wrapper script by Aoo Studio
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer # Thailand # Bangkok
@@ -8,7 +8,6 @@
 ################## Step1 basic install & update ####################
 # install
 yum install screen -y
-yum install perl -y
 yum -y install epel-release
 yum install net-tools -y
 yum install wget -y
