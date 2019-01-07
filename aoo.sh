@@ -1,6 +1,5 @@
 #!/bin/bash
-# Aoo Basic installation wrapper # Version 1.0.0.4
-# Aoo installation wrapper script by Aoo Studio
+# Aoo Basic installation wrapper # Version 1.0.0.5
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer # Thailand # Bangkok
 # https://www.aoostudio.com
@@ -43,6 +42,7 @@ sed -i 's/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/' 
 yum install htop -y
 ### mysql procress monitor ##
 yum install mytop -y
+curl -o https://raw.githubusercontent.com/aoostudio/linux/master/.mytop
 
 echo "************************************************"
 echo "*                                              *"
