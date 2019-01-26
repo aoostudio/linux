@@ -1,5 +1,5 @@
 #!/bin/bash
-# Aoo Basic installation wrapper # Version 1.0.0.5
+# Aoo Basic installation wrapper # Version 1.0.0.6
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer # Thailand # Bangkok
 # https://www.aoostudio.com
@@ -11,6 +11,10 @@ yum -y install epel-release
 yum install net-tools -y
 yum install wget -y
 yum install whois -y
+yum install ntp -y
+yum install perl -y
+yum -y install perl-ExtUtils-MakeMaker perl-Digest-SHA perl-Net-DNS  perl-NetAddr-IP perl-Archive-Tar perl-IO-Zlib perl-Mail-SPF perl-IO-Socket-INET6 perl-IO-Socket-SSL perl-Mail-DKIM perl-Encode-Detect perl-HTML-Parser perl-HTML-Tagset perl-Time-HiRes perl-libwww-perl perl-Sys-Syslog perl-Net-CIDR-Lite perl-Net-DNS-Nameserver perl-Geo-IP perl-Net-Patricia perl-DB_File perl-Razor-Agent
+
 
 # update os
 yum -y update
@@ -44,14 +48,10 @@ yum install htop -y
 yum install mytop -y
 curl -o https://raw.githubusercontent.com/aoostudio/linux/master/.mytop
 
-
-
-
 ################ Install Netdata #####################
 
 echo -e '\e[1;36mServer Status Show Apache Server Status .......................................................OK\e[0m';
 sed -i 's/#ExtendedStatus/ExtendedStatus/' /etc/httpd/conf/extra/httpd-info.conf
-
 
 echo -e '\e[1;36mInstall Netdata (Traffic/CPU Monitoring Graph) http://yourip:19999 ............................OK\e[0m';
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
@@ -103,8 +103,8 @@ cat <<EOF >>/etc/nginx/nginx-info.conf
     }
 EOF
 
+###################### End Script  #######################
+
 echo "************************************************"
-echo "*                                              *"
 echo "*           PLEASE REBOOT SERVER NOW           *"
-echo "*                                              *"
 echo "************************************************"
