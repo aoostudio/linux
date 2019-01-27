@@ -1,5 +1,5 @@
 #!/bin/bash
-# Aoo Basic installation wrapper # Version 1.0.0.6
+# Aoo Basic installation wrapper # Version 1.0.0.7
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer # Thailand # Bangkok
 # https://www.aoostudio.com
@@ -14,7 +14,6 @@ yum install whois -y
 yum install ntp -y
 yum install perl -y
 yum -y install perl-ExtUtils-MakeMaker perl-Digest-SHA perl-Net-DNS  perl-NetAddr-IP perl-Archive-Tar perl-IO-Zlib perl-Mail-SPF perl-IO-Socket-INET6 perl-IO-Socket-SSL perl-Mail-DKIM perl-Encode-Detect perl-HTML-Parser perl-HTML-Tagset perl-Time-HiRes perl-libwww-perl perl-Sys-Syslog perl-Net-CIDR-Lite perl-Net-DNS-Nameserver perl-Geo-IP perl-Net-Patricia perl-DB_File perl-Razor-Agent
-
 
 # update os
 yum -y update
@@ -44,6 +43,8 @@ sed -i 's/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/' 
 
 ### os procress monitor ###
 yum install htop -y
+yum install atop -y
+yum install iftop -y
 ### mysql procress monitor ##
 yum install mytop -y
 curl -o https://raw.githubusercontent.com/aoostudio/linux/master/.mytop
@@ -104,7 +105,6 @@ cat <<EOF >>/etc/nginx/nginx-info.conf
 EOF
 
 ###################### End Script  #######################
-
 echo "************************************************"
 echo "*           PLEASE REBOOT SERVER NOW           *"
 echo "************************************************"
