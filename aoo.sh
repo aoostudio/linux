@@ -41,16 +41,16 @@ sed -i 's/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/' 
 # Create Perl encripted Password by Aoostudio :  
 # https://github.com/aoostudio/linux/blob/master/Create%20Password%20(perl%20encrypted%20linux)
 
-### os procress monitor ###
+################## Step3 Install Monitor Process ####################
 yum install htop -y
 yum install atop -y
 yum install iftop -y
+ yum install nmon -y
 ### mysql procress monitor ##
 yum install mytop -y
 curl -o https://raw.githubusercontent.com/aoostudio/linux/master/.mytop
 
 ################ Install Netdata #####################
-
 echo -e '\e[1;36mServer Status Show Apache Server Status .......................................................OK\e[0m';
 sed -i 's/#ExtendedStatus/ExtendedStatus/' /etc/httpd/conf/extra/httpd-info.conf
 
