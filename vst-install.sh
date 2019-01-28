@@ -8,14 +8,17 @@
 #      Basic Install      #
 ###########################
 
+# install
 yum install screen -y
-yum install perl -y
+yum -y install epel-release
 yum install net-tools -y
-yum install apt -y
+yum install wget -y
 yum install whois -y
-yum install open-vm-tools -y
+yum install ntp -y
+yum install perl -y
+yum -y install perl-ExtUtils-MakeMaker perl-Digest-SHA perl-Net-DNS  perl-NetAddr-IP perl-Archive-Tar perl-IO-Zlib perl-Mail-SPF perl-IO-Socket-INET6 perl-IO-Socket-SSL perl-Mail-DKIM perl-Encode-Detect perl-HTML-Parser perl-HTML-Tagset perl-Time-HiRes perl-libwww-perl perl-Sys-Syslog perl-Net-CIDR-Lite perl-Net-DNS-Nameserver perl-Geo-IP perl-Net-Patricia perl-DB_File perl-Razor-Agent
 
-#### Update #####
+# update os
 yum -y update
 
 # install sudo
