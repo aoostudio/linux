@@ -10,5 +10,5 @@ delay=3
 port=3306
 socket=
 batchmode=0
-color=1
+color=5
 idle=1
