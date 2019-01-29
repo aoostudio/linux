@@ -7,6 +7,7 @@
 ################## Step1 basic install & update ####################
 # install
 yum install screen -y
+yum install open-vm-tools -y
 yum -y install epel-release
 yum install net-tools -y
 yum install wget -y
