@@ -35,6 +35,7 @@ chown aoo.aoo -R /home/aoo /home/aoo/.ssh
 echo -e '\e[1;36mConfig + Securing SSHD.........................................................................OK\e[0m';
 sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
 sed -i 's/#MaxAuthTries 6/MaxAuthTries 3/' /etc/ssh/sshd_config
+echo 'AllowUsers root' >> /etc/ssh/sshd_config
 echo 'AllowUsers aoo' >> /etc/ssh/sshd_config
 sed -i 's/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/' /etc/sudoers
 
@@ -48,7 +49,7 @@ yum install iftop -y
  yum install nmon -y
 ### mysql procress monitor ##
 yum install mytop -y
-curl -o https://raw.githubusercontent.com/aoostudio/linux/master/.mytop
+curl -o /root/.mytop https://raw.githubusercontent.com/aoostudio/linux/master/.mytop
 
 ################ Install Netdata #####################
 echo -e '\e[1;36mServer Status Show Apache Server Status .......................................................OK\e[0m';
