@@ -2,7 +2,6 @@
 # Aoo Mytop installation wrapper # Version 1.0.0.1
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer # Thailand # Bangkok
-# https://www.aoostudio.com
 
 host=localhost
 db=mysql
