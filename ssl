@@ -1,0 +1,14 @@
+#!/bin/bash
+# Aoo Gen SSL Certificate # Version 1.0.0.1
+# Script Developed by Apivat Pattana-Anurak
+# SysAdmin & Programmer # Thailand # Bangkok
+# https://www.aoostudio.com
+
+##### Step 1) Generate Private Key On The Server
+openssl genrsa -des3 -out www.domain.com.key 2048
+
+##### Step 2) Generate Certificate Signing Request (CSR)
+openssl req - ใหม่ -key www.domain.com.key -out www.domain.com.csr
+
+###### Step 3) Create SSL Certificate
+openssl x509 -req -days 365-in www.domain.com.csr -signkey www.domain.com.key -out www.domain.com.crt
