@@ -1,5 +1,5 @@
 #!/bin/bash
-# Aoo Basic installation wrapper # Version 1.0.0.8
+# Aoo Basic installation wrapper # Version 1.0.0.9
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer # Thailand # Bangkok
 # https://www.aoostudio.com
@@ -107,6 +107,7 @@ cat <<EOF >>/etc/nginx/nginx-info.conf
 EOF
 
 rm -rf mod_evasive* csf* aoo.sh xcache* . # Delete Script aoo.sh
+history -c
 
 ######################### End Script  #######################
 
