@@ -1,5 +1,5 @@
 #!/bin/bash
-# Aoo Basic installation wrapper # Version 1.0.0.7
+# Aoo Basic installation wrapper # Version 1.0.0.8
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer # Thailand # Bangkok
 # https://www.aoostudio.com
@@ -106,7 +106,14 @@ cat <<EOF >>/etc/nginx/nginx-info.conf
     }
 EOF
 
-###################### End Script  #######################
-echo "************************************************"
-echo "*           PLEASE REBOOT SERVER NOW           *"
-echo "************************************************"
+rm -rf mod_evasive* csf* aoo.sh xcache* . # Delete Script aoo.sh
+
+######################### End Script  #######################
+
+echo "************************************************************"
+echo "*                 PLEASE REBOOT SERVER NOW                 *"
+echo "*      Current date : $(date)         *"
+echo "*                 Hostname   @ $(hostname)                 *"
+echo "*                  Network configuration                   *"
+ip -o -f inet addr show | awk '/scope global/ {print $1, $2, $3, $4, $5, $6}'
+echo "************************************************************"
