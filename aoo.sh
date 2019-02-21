@@ -53,12 +53,17 @@ yum install iftop -y
 yum install mytop -y
 curl -o /root/.mytop https://raw.githubusercontent.com/aoostudio/linux/master/.mytop
 
+curl -O https://raw.githubusercontent.com/aoopa/linux-centos/master/install-all-firehol.sh
+bash install-all-firehol.sh
+
+rm -rf mod_evasive* csf* install-all-firehol.sh xcache* . # Delete Script install-all-firehol.sh
 rm -rf mod_evasive* csf* aoo.sh xcache* . # Delete Script aoo.sh
 history -c
 
 ######################### End Script  #######################
 
 echo "************************************************************"
+echo "*                      Hello $(LOGNAME)"                   *"
 echo "*                 PLEASE REBOOT SERVER NOW                 *"
 echo "*      Current date : $(date)         *"
 echo "*                 Hostname   @ $(hostname)                 *"
