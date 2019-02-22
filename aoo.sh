@@ -63,7 +63,7 @@ history -c
 ######################### End Script  #######################
 
 echo "************************************************************"
-echo "*                      Hello $(LOGNAME)"                   *"
+echo "*                      Hello : "$USER"                     *"
 echo "*                 PLEASE REBOOT SERVER NOW                 *"
 echo "*      Current date : $(date)         *"
 echo "*                 Hostname   @ $(hostname)                 *"
