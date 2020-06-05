@@ -2,7 +2,7 @@
 # Stech Asia Basic installation wrapper For Linux Centos 6,7 # Version 1.0.0.1
 # Script Developed by Apivat Pattana-Anurak
 # SysAdmin & Programmer Form #Bangkok #Thailand 
-# curl -O https://raw.githubusercontent.com/aoopa/linux-centos/master/aoo.sh
+# curl -O https://raw.githubusercontent.com/aoopa/linux-centos/master/stech.sh
 # sh stech.sh
 
 
