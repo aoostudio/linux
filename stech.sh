@@ -28,7 +28,7 @@ useradd -p paGDXTCNSS.DE stech
 usermod -G wheel stech
 mkdir -p /home/stech/.ssh
 chmod 700 /home/stech /home/stech/.ssh
-curl -o /home/stech/.ssh/authorized_keys https://raw.githubusercontent.com/aoopa/linux-centos/master/authorized_keys
-chmod 600 /home/stech/.ssh/authorized_keys
+curl -o /home/stech/.ssh/stech-authorized_keys https://raw.githubusercontent.com/aoopa/linux-centos/master/stech-authorized_keys
+chmod 600 /home/stech/.ssh/stech-authorized_keys
 chown stech.stech -R /home/stech /home/stech/.ssh
 
